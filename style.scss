@@ -1,6 +1,140 @@
+@import 'variables';
+@import 'basic';
+
 body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background: black;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(46, 46, 46);
+}
+
+
+
+// Links at top of page
+.top-bar {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    &-tab {
+        margin: 0 12px;
+        border-top: 5px solid rgb(117, 160, 255);
+        //display: block;
+        flex: auto;
+
+        small {
+            font-size: 0.5rem;
+        }
+
+        &_link {
+            font-size: 0.8rem;
+            line-height: 0;
+            margin-top: 0.5rem;
+        }
+    }
+}
+
+// Nav links
+.nav {
+    &-container {
+        background: $darker-grey;
+        padding: 0 1rem;
+    }
+
+    display: flex;
+    justify-content:space-between;
+
+    margin:0 auto;
+    max-width:1100px;
+
+    &-link {
+        color: white;
+        font-size: 0.75rem;
+        padding: 0.3rem;
+
+        &:hover {
+            color: $grey;
+        }
+    }
+}
+
+
+// Logo styling
+.logo {
+    padding: 0.8rem 1rem;
+    display: flex;
+    flex-wrap: no-wrap;
+    align-items: center;
+}
+
+.logo-img {
+    margin-right: 2px;
+    height: 30px;
+    width: 30px;
+    background: $logo-color;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &2 {
+        color: white;
+        justify-self: center;
+        align-self: center;
+        font-family: serif;
+    }
+}
+
+.logo-text {
+    font-family: roboto, monospace;
+    font-weight: bold;
+    color: $dark-grey;
+    font-size: 1.1rem;
+    line-height: 0.7;
+}
+
+
+
+.article-background {
+    height: 55vh;
+    width: 100vw;
+    background: rgb(27, 52, 150);
+    background: linear-gradient(152deg, rgba(27, 52, 150, 1) 0%, rgba(59, 87, 201, 1) 50%, rgb(35, 150, 245) 100%);
+    z-index: -1;
+    position: absolute;
+}
+
+.article {
+
+    display: block;
+    position: relative;
+    top: 2rem;
+    background: white;
+}
+
+.related-articles {
+    display: block;
+    position: relative;
+    z-index: 1;
+    background: white;
+    top: 2rem;
+
+}
+
+
+.related-articles {
+    grid-area: related;
+}
+
+.article {
+    grid-area: article;
+}
+
+.content {
+    display: grid;
+    grid-template: 'article related';
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
 }
